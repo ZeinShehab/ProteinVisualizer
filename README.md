@@ -1,3 +1,3 @@
-# Protein Viewer
+# Protein Visualizer
 
 Simple protein visualizer built using VTK.
