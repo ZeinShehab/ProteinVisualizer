@@ -8,6 +8,7 @@ find_package(VTK COMPONENTS
     FiltersSources
     IOChemistry
     InteractionStyle
+    InteractionWidgets
     RenderingContextOpenGL2
     RenderingCore
     RenderingFreeType
@@ -20,7 +21,7 @@ if (NOT VTK_FOUND)
     message(FATAL_ERROR "ProteinVisualizer: Can't find VTK build folder")
 endif()
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# include_directories(${PROJECT_SOURCE_DIR}/include)
 
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
