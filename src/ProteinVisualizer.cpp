@@ -12,6 +12,8 @@
 
 #include <cmath>
 
+#include "UIElements.h"
+
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         std::cerr << "Expected pdb filenname" << std::endl;
@@ -112,6 +114,9 @@ int main(int argc, char* argv[]) {
     bond->GetProperty()->SetSpecularColor(colors->GetColor3d("White").GetData());
 
     renderer->AddActor(bond);
+
+    UIElements ui(interactor);
+    ui.AddResolutionSlider(sphere, tube, "ResolutionSlider");
 
     window->SetWindowName("ProteinViewer");
     window->Render();

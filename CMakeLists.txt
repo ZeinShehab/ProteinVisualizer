@@ -20,7 +20,12 @@ if (NOT VTK_FOUND)
     message(FATAL_ERROR "ProteinVisualizer: Can't find VTK build folder")
 endif()
 
-add_executable(ProteinVisualizer MACOSX_BUNDLE ProteinVisualizer.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+
+add_executable(ProteinVisualizer MACOSX_BUNDLE ${SRC_FILES})
+
 target_link_libraries(ProteinVisualizer PRIVATE ${VTK_LIBRARIES})
 
 vtk_module_autoinit(
